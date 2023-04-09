@@ -1,8 +1,11 @@
 <?php
 
+
 use App\Http\Controllers\Main\IndexController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,12 +18,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Route::get('/', IndexController::class);
-
-Route::prefix('admin')->group(function () {
-   Route::get('/', \App\Http\Controllers\Admin\IndexController::class);
+Route::namespace('App\Http\Controllers\Main')->group(function () {
+   Route::get('/', 'IndexController');
 });
+
+//Admin routes
+Route::namespace('App\Http\Controllers\Admin')->prefix('admin')->group(function () {
+   Route::namespace('Main')->group(function () {
+       Route::get('/', 'IndexController');
+   });
+   Route::namespace('Category')->prefix('categories')->group(function () {
+        Route::get('/', 'IndexController');
+   });
+});
+
+
 
 
 
