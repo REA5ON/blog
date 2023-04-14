@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Dashboard</h1>
+                        <h1 class="m-0">Categories</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -25,9 +25,44 @@
             <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
-                    <div class="col-12">
-                        Categories
+                    <div class="col-1">
+                        <a href="{{ route('admin.category.create') }}" class="mb-3 btn btn-block btn-primary">Add</a>
                     </div>
+                </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Responsive Hover Table</h3>
+                                    </div>
+                                    <!-- /.card-header -->
+                                    <div class="card-body table-responsive p-0">
+                                        <table class="table table-hover text-nowrap">
+                                            <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Title</th>
+                                                <th>Action</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            @foreach($categories as $category)
+                                            <tr>
+                                                <td>{{ $category->id }}</td>
+                                                <td>{{ $category->title }}</td>
+                                                <td>
+                                                    <a href="#" class="btn btn-primary">Akaka</a>
+                                                </td>
+                                            </tr>
+                                            @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- /.card-body -->
+                                </div>
+                                <!-- /.card -->
+                            </div>
+                        </div>
 
                 </div>
                 <!-- /.row -->
