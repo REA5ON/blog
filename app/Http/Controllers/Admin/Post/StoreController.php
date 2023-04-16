@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Category;
+namespace App\Http\Controllers\Admin\Post;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Category\StoreRequest;
-use App\Models\Category;
+use App\Models\Post;
 use Illuminate\Http\RedirectResponse;
 
 class StoreController extends Controller
@@ -12,9 +12,9 @@ class StoreController extends Controller
     public function __invoke(StoreRequest $request): RedirectResponse
     {
         $data = $request->validated();
-        Category::firstOrCreate($data);
+        Post::firstOrCreate($data);
 
-        return redirect()->route('admin.category.index')
-            ->with('message', 'Category ' . $data['title'] . ' was created!');
+        return redirect()->route('admin.post.index')
+            ->with('message', 'Post ' . $data['title'] . ' was created!');
     }
 }

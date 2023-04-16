@@ -19,7 +19,13 @@
             </div><!-- /.container-fluid -->
         </div>
         <!-- /.content-header -->
-
+        <div class="col-6">
+            @if (session('message'))
+                <div class="alert alert-success">
+                    {{ session('message') }}
+                </div>
+            @endif
+        </div>
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
@@ -48,10 +54,30 @@
                                             <td>{{ $category->id }}</td>
                                             <td>{{ $category->title }}</td>
                                             <td>
-                                                <a href="{{ route('admin.category.show', $category) }}"
-                                                   class="btn btn-primary">Show</a>
-                                                <a href="{{ route('admin.category.edit', $category) }}"
-                                                   class="btn btn-warning">Edit</a>
+                                                <div class="row">
+
+                                                    <a href="{{ route('admin.category.show', $category) }} ">
+                                                        <ion-icon name="eye-outline"></ion-icon>
+                                                    </a>
+                                                    <div class="ml-3">
+                                                        <a href="{{ route('admin.category.edit', $category) }}"
+                                                           class="text-green">
+                                                            <ion-icon name="create-outline"></ion-icon>
+                                                        </a>
+                                                    </div>
+                                                    <div class="ml-3">
+                                                        <form action="{{ route('admin.category.delete', $category) }}"
+                                                              method="POST">
+                                                            @csrf
+                                                            @method('Delete')
+                                                            <button type="submit"
+                                                                    class="border-0 bg-transparent text-red">
+                                                                <ion-icon name="trash-outline"></ion-icon>
+                                                            </button>
+                                                        </form>
+                                                    </div>
+
+                                                </div>
                                             </td>
                                         </tr>
                                     @endforeach
