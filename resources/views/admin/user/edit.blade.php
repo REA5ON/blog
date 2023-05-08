@@ -43,6 +43,23 @@
                                 @error('email')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
+
+                                <div class="form-group w-50">
+                                    <label>Choose a role </label>
+                                    <select name="role" class="custom-select">
+                                        @foreach($roles as $id => $role)
+                                            <option value="{{ $id }}"
+                                                {{ $id == $user->role ? 'selected' : '' }}
+                                            >{{ $role }}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('role')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <div class="form-group w-50">
+                                    <input type="hidden" name="user_id" value="{{ $user->id }}">
+                                </div>
                             </div>
                             <input type="submit" class="btn btn-primary" value="Update">
                         </form>

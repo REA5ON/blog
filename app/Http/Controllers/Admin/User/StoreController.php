@@ -18,6 +18,7 @@ class StoreController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'role' => $data['role'],
         ]);
 
         event(new Registered($user));

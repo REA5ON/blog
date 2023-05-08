@@ -55,6 +55,10 @@
                                         <td>{{ $user->email }}</td>
                                     </tr>
                                     <tr>
+                                        <td>Role</td>
+                                        <td>{{ $user->role }}</td>
+                                    </tr>
+                                    <tr>
                                         <td>Created</td>
                                         <td>{{ $user->created_at }}</td>
                                     </tr>

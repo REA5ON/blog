@@ -83,6 +83,9 @@
                                         >{{ $category->title }}</option>
                                         @endforeach
                                     </select>
+                                    @error('category_id')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="form-group w-25">
                                     <label>Tags</label>
