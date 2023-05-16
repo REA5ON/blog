@@ -22,7 +22,7 @@ Route::namespace('App\Http\Controllers\Main')->group(function () {
 //Admin routes
 Route::namespace('App\Http\Controllers\Admin')
     ->prefix('admin')
-    ->middleware(['auth', 'admin'])
+    ->middleware(['auth', 'admin', 'verified'])
     ->group(function () {
 
         Route::namespace('Main')->group(function () {

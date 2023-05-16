@@ -11,6 +11,7 @@ class IndexController extends Controller
     public function __invoke() :View
     {
         $users = User::all();
+
         return view('admin.user.index', compact('users'));
     }
 }

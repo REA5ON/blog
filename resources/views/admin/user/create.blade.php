@@ -44,15 +44,6 @@
                                 @error('email')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
-
-                                <!-- Password -->
-                                <label>
-                                    <input type="password" name="password" value="{{old('password')}}" class="form-control" placeholder="Password">
-                                </label>
-                                @error('password')
-                                <div class="text-danger">{{ $message }}</div>
-                                @enderror
-
                                 <div class="form-group w-50">
                                     <label>Choose a role </label>
                                     <select name="role" class="custom-select">
