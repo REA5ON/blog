@@ -19,7 +19,13 @@
             </div><!-- /.container-fluid -->
         </div>
         <!-- /.content-header -->
-
+        <div class="col-6">
+            @if (session('message'))
+                <div class="alert alert-success">
+                    {{ session('message') }}
+                </div>
+            @endif
+        </div>
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">

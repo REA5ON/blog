@@ -15,6 +15,7 @@ class StoreController extends Controller
 //        Tag::firstOrCreate($data);
         Tag::create($data);
 
-        return redirect()->route('admin.tag.index');
+        return redirect()->route('admin.tag.index')
+            ->with('message', 'New tag ' . $data['title'] . ' was created!');
     }
 }
