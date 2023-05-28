@@ -19,6 +19,18 @@ Route::namespace('App\Http\Controllers\Main')->group(function () {
     Route::get('/', 'IndexController');
 });
 
+
+Route::namespace('App\Http\Controllers\Personal')
+    ->prefix('personal')
+    ->middleware(['auth', 'verified'])
+    ->group(function () {
+
+        Route::namespace('Main')->group(function () {
+            Route::get('/', 'IndexController')->name('personal.main.index');
+        });
+});
+
+
 //Admin routes
 Route::namespace('App\Http\Controllers\Admin')
     ->prefix('admin')
@@ -26,7 +38,7 @@ Route::namespace('App\Http\Controllers\Admin')
     ->group(function () {
 
         Route::namespace('Main')->group(function () {
-            Route::get('/', 'IndexController');
+            Route::get('/', 'IndexController')->name('admin.main.index');
         });
 
         Route::namespace('Post')->prefix('posts')->group(function () {

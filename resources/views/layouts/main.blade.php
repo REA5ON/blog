@@ -140,6 +140,7 @@
 <script src="{{asset('assets/vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('assets/vendors/aos/aos.js')}}"></script>
 <script src="{{asset('assets/js/main.js')}}"></script>
+<script src="https://kit.fontawesome.com/5716137898.js" crossorigin="anonymous"></script>
 <script>
     AOS.init({
         duration: 1000

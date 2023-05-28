@@ -7,7 +7,7 @@
             <ul class="pt-3 nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
                     <a href="{{route('admin.main.index')}}" class="nav-link">
-                        <i class="nav-icon far fa-home"></i>
+                        <i class="nav-icon far fa-image"></i>
                         <p>
                             Main page
                         </p>
@@ -16,7 +16,7 @@
 
                 <li class="nav-item">
                     <a href="{{route('admin.category.index')}}" class="nav-link">
-                        <i class="nav-icon far fa-bookmark"></i>
+                        <i class="nav-icon far fa-image"></i>
                         <p>
                             Categories
                         </p>
@@ -32,7 +32,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{route('admin.tag.index')}}" class="nav-link">
-                        <i class="nav-icon far fa-tags"></i>
+                        <i class="nav-icon far fa-image"></i>
                         <p>
                             Tags
                         </p>
@@ -40,7 +40,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{route('admin.user.index')}}" class="nav-link">
-                        <i class="nav-icon far fa-users"></i>
+                        <i class="nav-icon far fa-image"></i>
                         <p>
                             Users
                         </p>
